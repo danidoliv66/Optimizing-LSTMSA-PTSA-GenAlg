@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Jun 24 13:30:39 2023
-@author: danie
+@author: Daniel Parada
 
 This is the final implementation of the EncDec model, AFTER optimization.
 The code is based on the BEST CHROMOSOME of genetic algorithm and have some
@@ -115,7 +115,6 @@ from Models.getMetrics import show_train_history, selectMetrics
 from sklearn.metrics import classification_report, roc_auc_score
 from pycm import ConfusionMatrix
 import matplotlib.pyplot as plt
-from botNotify import TelegramBot
         
 def create_classWeight(tr, n_classes=3):
     n_samples = len(tr)
@@ -549,20 +548,3 @@ for c in comb_set:
             pickle.dump({'ACC':historyACC,
                          'AUC':historyAUC,
                          'LOSS':historyLOSS}, f)
-    
-#%% Notify me
-    try:
-        bot = TelegramBot()
-        bot.telegram_bot_sendtext("Evaluation of model finished! " + ("(saved!)" if save else "(remember to save the results)"),
-                                  modelName=model_name.replace('_','-'),
-                                  Time=strftime('%H:%M:%S', gmtime(np.sum(foldTime))),
-                                  AUC=f"{np.mean(foldAUC)*100:.2f} %",
-                                  F1=f"{np.mean(foldF1)*100:.2f} %",
-                                  ACC=f"{np.mean(foldACC)*100:.2f} %",
-                                  Spe=f"{np.mean(foldSpe)*100:.2f} %",
-                                  Sen=f"{np.mean(foldSen)*100:.2f} %")
-    except:
-        print(f"Finished model {model_name.replace('_','-')} but couldn't notify due to failed connection!")
-
-    
-    
