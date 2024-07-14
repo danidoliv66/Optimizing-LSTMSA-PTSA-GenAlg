@@ -2,7 +2,7 @@
 """
 Created on Sat Mar  9 16:48:47 2024
 
-@author: danie
+@author: Daniel Parada
 """
 #%% Parameters
 # *****************************************************************************
@@ -450,12 +450,3 @@ if save:
     with open(f'{savePath}/Model_{model_name}/trainLog.txt','w') as log_file:
         log_file.writelines(full_log)
 # *****************************************************************************
-
-#%% Notify me
-from botNotify import TelegramBot
-bot = TelegramBot()
-bot.telegram_bot_sendtext("Evaluation of model finished! " + ("(saved!)" if save else "(remember to save the results)"),
-                          modelName=model_name.replace('_','-'),
-                          Time=strftime('%H:%M:%S', gmtime(np.sum(foldTime))),
-                          AUC=f"{np.mean(foldAUC)*100:.2f} %",
-                          ACC=f"{np.mean(foldACC)*100:.2f} %")
