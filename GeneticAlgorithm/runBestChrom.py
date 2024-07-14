@@ -2,7 +2,7 @@
 """
 Created on Fri Jun 14 00:30:26 2024
 
-@author: Daniel
+@author: Daniel Parada
 
 Run best chromosome:
     First chromosome from the last generation
@@ -140,7 +140,7 @@ LEARNING_RATE:    float = 0.0001  # learning rate of RMSProp optimizer
 MetricsPath:     str = "TrainedModels&Metrics/"
 
 
-SAMPLING_METHOD: int = 1
+SAMPLING_METHOD: int = 0
 # Values: 
 #    0 -> Normal
 #    1 -> Undersampling
@@ -615,29 +615,5 @@ with open(MetricsPath + f'/Model_{model_name}/Training/TrainingCurves', 'wb') as
     pickle.dump({'ACC':historyACC,
                  'AUC':historyAUC,
                  'LOSS':historyLOSS}, f)
-    
-#%% Notify me
-from botNotify import TelegramBot
-
-try:
-    bot = TelegramBot()
-    bot.telegram_bot_sendtext("Evaluation of model finished! ",
-                              modelName=model_name.replace('_','-'),
-                              Time=strftime('%H:%M:%S', gmtime(np.sum(foldTime))),
-                              AUC=f"{np.mean(foldAUC)*100:.2f} %",
-                              F1=f"{np.mean(foldF1)*100:.2f} %",
-                              ACC=f"{np.mean(foldACC)*100:.2f} %",
-                              Spe=f"{np.mean(foldSpe)*100:.2f} %",
-                              Sen=f"{np.mean(foldSen)*100:.2f} %")
-except:
-    print(f"Finished model {model_name.replace('_','-')} but couldn't notify due to failed connection!")
-
-
-
-
-
-
-
-
 
 
