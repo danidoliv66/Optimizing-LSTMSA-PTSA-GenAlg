@@ -1,5 +1,5 @@
-# Optimizing an LSTM self-Attention architecture for Portuguese Sentiment Analysis using a Genetic Algorithm
-Python code made publicly available to replicate the methodology reported in the article `Optimizing an LSTM self-Attention architecture for Portuguese Sentiment Analysis using a Genetic Algorithm`, published in the IEEE/ACM Transactions on Audio, Speech, and Language Processing journal.
+# Optimizing an LSTM self-attention architecture for Portuguese Sentiment Analysis using a Genetic Algorithm
+Python code made publicly available to replicate the methodology reported in the article `Optimizing an LSTM self-Attention architecture for Portuguese Sentiment Analysis using a Genetic Algorithm`, published in the MDPI Applied Sciences journal.
 
 # Dataset
 The dataset is available in Mendeley Data repository, with the DOI 10.17632/448d7kts3k.1. You can freely downloaded.
