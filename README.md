@@ -19,4 +19,15 @@ The dataset provides several columns. The relevant columns for this study are:
 # Citation
 If you used any of the scripts made available and it was useful for your work, please consider citing our study.
 
-<citation-here>
+#### MDPI and ACS Style
+Parada, D.; Branco, A.; Silva, M.; Mendonça, F.; Mostafa, S.; Morgado-Dias, F. Optimizing an LSTM Self-Attention Architecture for Portuguese Sentiment Analysis Using a Genetic Algorithm. Appl. Sci. 2025, 15, 6336. https://doi.org/10.3390/app15116336
+
+#### AMA Style
+Parada D, Branco A, Silva M, Mendonça F, Mostafa S, Morgado-Dias F. Optimizing an LSTM Self-Attention Architecture for Portuguese Sentiment Analysis Using a Genetic Algorithm. Applied Sciences. 2025; 15(11):6336. https://doi.org/10.3390/app15116336
+
+#### Chicago/Turabian Style
+Parada, Daniel, Alexandre Branco, Marcos Silva, Fábio Mendonça, Sheikh Mostafa, and Fernando Morgado-Dias. 2025. "Optimizing an LSTM Self-Attention Architecture for Portuguese Sentiment Analysis Using a Genetic Algorithm" Applied Sciences 15, no. 11: 6336. https://doi.org/10.3390/app15116336
+
+#### APA Style
+Parada, D., Branco, A., Silva, M., Mendonça, F., Mostafa, S., & Morgado-Dias, F. (2025). Optimizing an LSTM Self-Attention Architecture for Portuguese Sentiment Analysis Using a Genetic Algorithm. Applied Sciences, 15(11), 6336. https://doi.org/10.3390/app15116336
+
